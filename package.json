@@ -1,0 +1,25 @@
+{
+  "name": "@hjk/validate",
+  "version": "1.0.0",
+  "description": "A simple schema json validation",
+  "author": "hjak <apost3riori@gmail.com>",
+  "license": "MIT",
+  "repository": "hjak/validate",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "browserify ./src/index.js -s Validate -o build/index.js",
+    "uglify": "uglifyjs ./build/index.js -cm -o ./build/index.min.js",
+    "build": "npm run bundle && npm run uglify",
+    "prepublish": "npm run lint && npm run test && npm run build"
+  },
+  "keywords": [
+    "validation",
+    "schema",
+    "json"
+  ],
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "uglify-es": "^3.3.9"
+  }
+}
