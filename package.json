@@ -10,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "browserify ./src/index.js -s Validate -o build/index.js",
     "uglify": "uglifyjs ./build/index.js -cm -o ./build/index.min.js",
-    "build": "npm run bundle && npm run uglify"
+    "build": "npm run bundle && npm run uglify",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "validation",

@@ -309,6 +309,7 @@ module.exports = {
   maxNumber,
   minNumber,
   oneOf,
+  isType,
   setConfig,
   configure,
   validateRules,
