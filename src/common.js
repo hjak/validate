@@ -228,8 +228,12 @@ function configure(config) {
 
 function setConfig(v, k, config) {
   switch (k) {
-    case 'messages': if (!checkType(v, 'object')) return
-    case 'key': if (!checkType(v, 'string')) return
+    case 'messages':
+      if (!checkType(v, 'object')) return
+      break
+    case 'key':
+      if (!checkType(v, 'string')) return
+      break
     default: break
   }
   config[k] = v
