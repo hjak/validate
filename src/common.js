@@ -161,7 +161,7 @@ function checkConfig(k, v, config) {
 }
 
 function checkMessage(k, config) {
-  return config && config.messages? config.messages[k] : null
+  return config && config.messages? config.messages[k] || config.messages._default : null
 }
 
 function flattenSchema(obj) {
@@ -230,8 +230,10 @@ function setConfig(v, k, config) {
   switch (k) {
     case 'messages':
       if (!checkType(v, 'object')) return
+      break
     case 'key':
       if (!checkType(v, 'string')) return
+      break
     default: config[k] = v
   }
 }
