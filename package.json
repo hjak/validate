@@ -5,13 +5,9 @@
   "author": "hjak <apost3riori@gmail.com>",
   "license": "MIT",
   "repository": "hjak/validate",
-  "main": "build/index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "browserify ./src/index.js -s Validate -o build/index.js",
-    "uglify": "uglifyjs ./build/index.js -cm -o ./build/index.min.js",
-    "build": "npm run bundle && npm run uglify",
-    "prepublishOnly": "npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "validation",
