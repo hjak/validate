@@ -1,6 +1,6 @@
 'use strict'
 
-const { getError, isDefined } = require('validate/src/configuration')
+const { getError, isDefined } = require('../configuration')
 
 
 const match = (value, arr) => !!~arr.indexOf(value)
