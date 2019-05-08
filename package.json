@@ -1,6 +1,6 @@
 {
   "name": "@hjk/validate",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A simple schema json validation",
   "author": "hjak <apost3riori@gmail.com>",
   "license": "MIT",
