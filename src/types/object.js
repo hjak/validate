@@ -3,9 +3,9 @@
 const { isEmpty } = require('../configuration')
 
 
-module.exports = function(schema, { required = true }) {
+module.exports = function(schema, { required } = { required: true }) {
   return function(data) {
-    if (!required && !data || isEmpty(data)) {
+    if (!required && !data) {
       return null
     }
 
