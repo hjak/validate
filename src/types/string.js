@@ -15,7 +15,7 @@ module.exports = function({ required = true, min, max, exact, pattern, ref }, me
     const err = []
     const defined = isDefined(value)
 
-    if (required && !defined || !value) {
+    if (required && (!defined || !value)) {
       err.push(getError('required', { messages, key }))
       return err
     }
