@@ -5,12 +5,11 @@
   "author": "hjakk",
   "license": "MIT",
   "repository": "hjakk/validate",
-  "main": "dist/bundle.min.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf dist && npm run build:bundle && npm run build:uglify",
-    "build:bundle": "browserify src/index.js -t [ babelify --presets [ @babel/env ] ] -o dist/bundle.js",
-    "build:uglify": "uglifyjs dist/bundle.js -c -o dist/bundle.min.js",
+    "build": "rimraf dist && npm run build:bundle",
+    "build:bundle": "babel ./src -d ./dist",
     "prepare": "npm run build",
     "version": "git add -A src",
     "postversion": "git push"
@@ -21,11 +20,9 @@
     "json"
   ],
   "devDependencies": {
+    "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.5.4",
-    "babelify": "^10.0.0",
-    "browserify": "^16.2.3",
-    "rimraf": "^2.6.3",
-    "uglify-js": "^3.6.0"
+    "rimraf": "^2.6.3"
   }
 }
