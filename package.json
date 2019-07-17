@@ -2,12 +2,18 @@
   "name": "@hjk/validate",
   "version": "2.0.5",
   "description": "A simple schema json validation",
-  "author": "hjak <apost3riori@gmail.com>",
+  "author": "hjakk",
   "license": "MIT",
-  "repository": "hjak/validate",
-  "main": "src/index.js",
+  "repository": "hjakk/validate",
+  "main": "dist/bundle.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist && npm run build:bundle && npm run build:uglify",
+    "build:bundle": "browserify src/index.js -t [ babelify --presets [ @babel/env ] ] -o dist/bundle.js",
+    "build:uglify": "uglifyjs dist/bundle.js -c -o dist/bundle.min.js",
+    "prepare": "npm run build",
+    "version": "git add -A src",
+    "postversion": "git push"
   },
   "keywords": [
     "validation",
@@ -15,7 +21,11 @@
     "json"
   ],
   "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "babelify": "^10.0.0",
     "browserify": "^16.2.3",
-    "uglify-es": "^3.3.9"
+    "rimraf": "^2.6.3",
+    "uglify-js": "^3.6.0"
   }
 }
